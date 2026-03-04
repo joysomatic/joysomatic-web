@@ -20,4 +20,4 @@ This project is built using a minimalist, high-efficiency stack:
 - **2026 Strategy:** A clean-slate rewrite focused on performance, clean Git history, and AI-driven code quality.
 
 ---
-*Developed with Cursor and managed with Git by Joysomatic.*
+*Developed with Cursor and managed with Git by JoySomatic.*
