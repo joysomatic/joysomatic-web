@@ -1,0 +1,49 @@
+---
+interface Props {
+  title?: string;
+}
+
+import "../styles/global.css";
+
+const { title = "JoySomatic | Systems of the Heart, Sound & Code" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Comfortaa:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-[#fdf6ff] text-[#1e1b4b] leading-relaxed antialiased relative overflow-x-hidden"
+  >
+    <div class="pointer-events-none fixed inset-0 -z-10">
+      <div
+        class="absolute inset-0 opacity-90 bg-[radial-gradient(circle_at_top,_rgba(196,181,253,0.45)_0,_transparent_55%),radial-gradient(circle_at_10%_80%,_rgba(167,243,208,0.6)_0,_transparent_55%),radial-gradient(circle_at_90%_20%,_rgba(252,231,243,0.8)_0,_transparent_55%)]"
+      ></div>
+      <div
+        class="absolute inset-0 opacity-[0.14] mix-blend-soft-light bg-[linear-gradient(120deg,_rgba(180,183,249,0.5)_1px,_transparent_1px),linear-gradient(210deg,_rgba(190,242,245,0.55)_1px,_transparent_1px)] bg-[size:70px_70px]"
+      ></div>
+    </div>
+
+    <div id="top" class="min-h-screen relative z-10">
+      <slot />
+    </div>
+  </body>
+</html>
+
