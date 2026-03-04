@@ -1,0 +1,17 @@
+{
+  "name": "joysomatic-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^5.2",
+    "tailwindcss": "4",
+    "@tailwindcss/vite": "4.2.1"
+  }
+}
