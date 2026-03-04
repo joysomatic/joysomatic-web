@@ -1,6 +1,6 @@
 # joysomatic-web 🌐
 
-**The digital home of Joysomatic — Personal Brand & Portfolio**
+**The digital home of JoySomatic — Personal Brand & Portfolio**
 
 ## 🚀 The Comeback
 After an 8-year hiatus, I am returning to the craft of development with a fresh perspective. This repository is a complete rewrite of my digital presence, moving away from legacy patterns and embracing a modern, AI-assisted workflow.
