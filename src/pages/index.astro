@@ -1,53 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/navbar.astro";
 ---
 
 <BaseLayout>
-  <nav
-    class="fixed top-0 left-0 right-0 z-40 bg-violet-200/70 backdrop-blur-xl border-b border-violet-100/80"
-  >
-    <div
-      class="max-w-4xl mx-auto flex flex-wrap items-center gap-x-3 gap-y-2 md:gap-y-1.5 px-6 py-2.5"
-    >
-      <a
-        href="#top"
-        class="px-3.5 py-1.5 rounded-full text-[0.7rem] md:text-xs lg:text-sm font-semibold text-indigo-900/85 hover:text-indigo-950 hover:bg-indigo-50 hover:shadow-[0_8px_24px_rgba(165,180,252,0.9)] hover:-translate-y-[1px] transition-all duration-200 ease-out"
-      >
-        Home
-      </a>
-      <a
-        href="#about"
-        class="px-3.5 py-1.5 rounded-full text-[0.7rem] md:text-xs lg:text-sm font-semibold text-indigo-900/85 hover:text-indigo-950 hover:bg-indigo-50 hover:shadow-[0_8px_24px_rgba(165,180,252,0.9)] hover:-translate-y-[1px] transition-all duration-200 ease-out"
-      >
-        The Architect
-      </a>
-      <a
-        href="#relationships"
-        class="px-3.5 py-1.5 rounded-full text-[0.7rem] md:text-xs lg:text-sm font-semibold text-indigo-900/85 hover:text-indigo-950 hover:bg-pink-50 hover:shadow-[0_8px_24px_rgba(251,207,232,0.9)] hover:-translate-y-[1px] transition-all duration-200 ease-out"
-      >
-        Relationship Coaching
-      </a>
-      <a
-        href="#lab"
-        class="px-3.5 py-1.5 rounded-full text-[0.7rem] md:text-xs lg:text-sm font-semibold text-indigo-900/85 hover:text-indigo-950 hover:bg-emerald-50 hover:shadow-[0_8px_24px_rgba(167,243,208,0.9)] hover:-translate-y-[1px] transition-all duration-200 ease-out"
-      >
-        The AI Lab &amp; Studio
-      </a>
-      <a
-        href="#fatherhood"
-        class="px-3.5 py-1.5 rounded-full text-[0.7rem] md:text-xs lg:text-sm font-semibold text-indigo-900/85 hover:text-indigo-950 hover:bg-amber-50 hover:shadow-[0_8px_24px_rgba(253,230,138,0.9)] hover:-translate-y-[1px] transition-all duration-200 ease-out"
-      >
-        Fatherhood
-      </a>
-      <a
-        href="#contact"
-        class="px-3.5 py-1.5 rounded-full text-[0.7rem] md:text-xs lg:text-sm font-semibold text-indigo-900/85 hover:text-indigo-950 hover:bg-violet-50 hover:shadow-[0_8px_24px_rgba(196,181,253,0.9)] hover:-translate-y-[1px] transition-all duration-200 ease-out"
-      >
-        Connect
-      </a>
-    </div>
-  </nav>
-
+  
+<Navbar />
   <div class="pt-20 md:pt-24 px-6">
     <div class="mx-auto max-w-4xl">
       <header
