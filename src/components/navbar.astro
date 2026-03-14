@@ -1,67 +1,59 @@
 ---
 /* src/components/navbar.astro */
+const { url } = Astro;
+const isSpanish = url.pathname.startsWith('/es');
+const langTarget = isSpanish ? "/" : "/es/";
+const langLabel = isSpanish ? "English" : "Español";
 ---
 
-<nav
-  class="fixed top-0 left-0 right-0 z-50 bg-violet-200/70 backdrop-blur-xl border-b border-violet-100/80"
->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-violet-200/70 backdrop-blur-xl border-b border-violet-100/80">
   <div class="max-w-4xl mx-auto flex items-center justify-between px-6 py-3">
-    <a href="#top" class="text-xl font-bold text-indigo-950/90 md:hidden"
-      >JoySomatic</a
-    >
+    <a href={isSpanish ? "/es/#top" : "#top"} class="text-xl font-bold text-indigo-950/90">
+      JoySomatic
+    </a>
 
-    <button
-      id="menu-toggle"
-      class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none ml-auto"
-      aria-label="Toggle Menu"
-    >
-      <span
-        class="block w-6 h-0.5 bg-indigo-900 transition-all duration-300 origin-center"
-      ></span>
-      <span class="block w-6 h-0.5 bg-indigo-900 transition-all duration-300"
-      ></span>
-      <span
-        class="block w-6 h-0.5 bg-indigo-900 transition-all duration-300 origin-center"
-      ></span>
-    </button>
+    <div class="flex items-center gap-6">
+      <a 
+        href={langTarget} 
+        class="text-[10px] uppercase tracking-[0.2em] font-bold text-indigo-900/60 hover:text-indigo-900 transition-colors border border-indigo-900/20 rounded-full px-3 py-1"
+      >
+        {langLabel}
+      </a>
+
+      <button
+        id="menu-toggle"
+        class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
+        aria-label="Toggle Menu"
+      >
+        <span class="block w-6 h-0.5 bg-indigo-900 transition-all duration-300 origin-center"></span>
+        <span class="block w-6 h-0.5 bg-indigo-900 transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-indigo-900 transition-all duration-300 origin-center"></span>
+      </button>
+    </div>
 
     <div
       id="mobile-menu"
       class="absolute top-full left-0 w-full overflow-hidden max-h-0 transition-all duration-500 ease-in-out bg-violet-100/95 backdrop-blur-2xl md:static md:max-h-none md:w-auto md:bg-transparent md:backdrop-blur-none"
     >
-      <div
-        class="flex flex-col md:flex-row items-center gap-x-1 gap-y-4 px-6 py-8 md:py-0"
-      >
-        <a
-          href="#top"
-          class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-indigo-50 transition-all"
-          >Home</a
-        >
-        <a
-          href="#about"
-          class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-indigo-50 transition-all"
-          >The Architect</a
-        >
-        <a
-          href="#relationships"
-          class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-pink-50 transition-all"
-          >Relationship Coaching</a
-        >
-        <a
-          href="#lab"
-          class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-emerald-50 transition-all"
-          >The AI Lab & Studio</a
-        >
-        <a
-          href="#fatherhood"
-          class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-amber-50 transition-all"
-          >Fatherhood</a
-        >
-        <a
-          href="#contact"
-          class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-violet-50 transition-all"
-          >Connect</a
-        >
+      <div class="flex flex-col md:flex-row items-center gap-x-1 gap-y-4 px-6 py-8 md:py-0">
+        <a href={isSpanish ? "/es/#top" : "#top"} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-indigo-50 transition-all">
+          {isSpanish ? "Inicio" : "Home"}
+        </a>
+        <a href={isSpanish ? "/es/#about" : "#about"} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-indigo-50 transition-all">
+          {isSpanish ? "El Arquitecto" : "The Architect"}
+        </a>
+        <a href={isSpanish ? "/es/#relationships" : "#relationships"} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-pink-50 transition-all">
+          {isSpanish ? "Coaching" : "Coaching"}
+        </a>
+        <a href={isSpanish ? "/es/#lab" : "#lab"} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-emerald-50 transition-all">
+          Lab
+        </a>
+        <a href={isSpanish ? "/es/#fatherhood" : "#fatherhood"} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-amber-50 transition-all">
+          {isSpanish ? "Paternidad" : "Fatherhood"}
+        </a>
+        <a href={isSpanish ? "/es/#contact" : "#contact"} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-violet-50 transition-all">
+          {isSpanish ? "Contacto" : "Connect"}
+        </a>
       </div>
     </div>
   </div>
@@ -74,8 +66,8 @@
   const spans = btn?.querySelectorAll("span");
 
   function toggleMenu() {
+    if (!menu || !spans) return;
     const isOpening = !menu.style.maxHeight || menu.style.maxHeight === "0px";
-
     if (isOpening) {
       menu.style.maxHeight = menu.scrollHeight + "px";
       spans[0].style.transform = "translateY(8px) rotate(45deg)";
@@ -90,7 +82,6 @@
   }
 
   btn?.addEventListener("click", toggleMenu);
-
   links.forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth < 768) toggleMenu();
