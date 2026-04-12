@@ -1,0 +1,372 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/navbar.astro";
+import { Image } from "astro:assets";
+
+import profileImg from "../images/me-architect.jpg";
+import labImg from "../images/bass-lab.webp";
+import fatherhoodImg from "../images/fatherhood.webp";
+---
+
+<BaseLayout>
+  <Navbar />
+  <div class="pt-20 md:pt-24 px-6">
+    <div class="mx-auto max-w-4xl">
+      <header class="relative text-left py-16 md:py-20">
+        <div
+          class="absolute inset-0 bg-white/65 backdrop-blur-2xl border-b border-violet-100/50"
+        >
+        </div>
+        <div class="relative max-w-4xl mx-auto px-6">
+          <p
+            class="text-[0.7rem] uppercase tracking-[0.35em] text-indigo-700/90 mb-4"
+          >
+            Systems of the Heart, Sound &amp; Code
+          </p>
+          <h1
+            class="text-[2.4rem] md:text-[3.1rem] leading-tight font-semibold text-indigo-950/90 drop-shadow-sm"
+          >
+            JoySomatic
+          </h1>
+          <p class="mt-4 text-base md:text-lg text-indigo-900/85 max-w-none">
+            Decoding the language of the Body, Relationships, and Systems
+            through somatics, sound, and engineering.
+          </p>
+        </div>
+      </header>
+
+      <main class="pb-16">
+        <section id="about" class="mt-12 md:mt-16">
+          <h2
+            class="inline-block text-2xl md:text-3xl font-semibold text-indigo-950/90 border-b border-pink-200 pb-1"
+          >
+            Hi, I’m José.
+          </h2>
+
+          <div
+            class="mt-8 text-base md:text-lg text-indigo-900/90 leading-relaxed"
+          >
+            <div
+              class="md:float-right md:ml-10 mb-8 w-full md:w-72 lg:w-80 aspect-square relative group"
+            >
+              <div
+                class="absolute -inset-1.5 bg-gradient-to-tr from-pink-200 to-violet-300 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-700"
+              >
+              </div>
+
+              <div
+                class="relative h-full w-full overflow-hidden rounded-2xl border border-white/40 shadow-xl"
+              >
+                <Image
+                  src={profileImg}
+                  alt="José Oñate"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+            </div>
+
+            <p class="mb-6">
+              Born in 1982, my journey into healing began as a teenager, driven
+              by the weight of intense anxiety. I later realized I was a Highly
+              Sensitive child, born with a deep empathy and intuition that I’ve
+              spent the last two decades learning to navigate through therapy,
+              somatic practices, and lived experience.
+            </p>
+
+            <p class="mb-6">
+              Since 2022, I have navigated the rhythms of co-parenting. This
+              journey of humility has been my greatest teacher in presence and
+              nervous system regulation. Now, as I enter this next chapter, I am
+              re-activating my roots as a Developer and Sound Engineer.
+            </p>
+
+            <p class="mb-6">
+              After a significant hiatus to focus on family, I am back at the
+              keyboard and in the studio. I am currently "building in public,"
+              documenting my return to code and audio engineering as I merge
+              these technical worlds with my somatic coaching practice.
+            </p>
+
+            <blockquote
+              class="border-l-4 border-pink-200 pl-4 italic text-indigo-900/85 mb-8"
+            >
+              "I am currently re-coding my life and my tools. I look at life
+              through two lenses: the Somatic heart that feels the rhythm, and
+              the Engineer’s mind that understands the system. I’m finding the
+              signal in the noise, one line of code at a time."
+            </blockquote>
+
+            <div class="clear-both"></div>
+          </div>
+        </section>
+
+        <section id="relationships" class="mt-12 md:mt-16">
+          <h2
+            class="inline-block text-2xl md:text-3xl font-semibold text-indigo-950/90 border-b border-pink-200 pb-1"
+          >
+            Relationship &amp; Somatic Coaching
+          </h2>
+
+          <p class="mt-6 text-base md:text-lg text-indigo-900/90">
+            My primary energy is dedicated to helping people navigate the
+            complexities of human connection. I help individuals and couples
+            "debug" the patterns that keep them stuck, using the body as our
+            primary source of truth.
+          </p>
+
+          <div class="mt-8 space-y-4 md:space-y-6">
+            <div
+              class="rounded-[2.25rem] bg-white/90 shadow-[0_18px_45px_rgba(148,163,184,0.5)] px-5 py-5"
+            >
+              <h3 class="text-lg font-semibold text-indigo-950/90">
+                Relational Insight
+              </h3>
+              <p class="mt-2.5 text-base md:text-lg text-indigo-900/85">
+                We look at the <strong>System</strong> of your relationship. I help
+                you identify the "phase cancellation" in your communication—the moments
+                where you clash instead of harmonize—and help you rewrite those scripts
+                for deeper connection.
+              </p>
+            </div>
+
+            <div
+              class="rounded-[2.25rem] bg-white/90 shadow-[0_18px_45px_rgba(148,163,184,0.5)] px-5 py-5"
+            >
+              <h3 class="text-lg font-semibold text-indigo-950/90">
+                In-Person Sessions (Safe Spaces)
+              </h3>
+              <p class="mt-2.5 text-base md:text-lg text-indigo-900/85">
+                I believe healing happens best where you feel most grounded.
+                In-person sessions can be held in <strong
+                  >nature, a private home, or any quiet space</strong
+                > that feels safe and supportive for you. Removing the clinical office
+                environment allows the nervous system to open in its own time.
+              </p>
+            </div>
+
+            <div
+              class="rounded-[2.25rem] bg-white/90 shadow-[0_18px_45px_rgba(148,163,184,0.5)] px-5 py-5"
+            >
+              <h3 class="text-lg font-semibold text-indigo-950/90">
+                Remote &amp; Async Coaching (Available to All)
+              </h3>
+              <p class="mt-2.5 text-base md:text-lg text-indigo-900/85">
+                Presence isn't limited by geography. I offer
+                <strong>Virtual Meetings (Google Meet)</strong> and
+                <strong>Asynchronous Voice Coaching</strong> for everyone—whether
+                you are across the world or just prefer to process your growth from
+                the comfort of your own space.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="lab" class="mt-12 md:mt-16">
+          <h2
+            class="inline-block text-2xl md:text-3xl font-semibold text-indigo-950/90 border-b border-pink-200 pb-1"
+          >
+            The JoySomatic Lab: Building in Public
+          </h2>
+
+          <div class="mt-8">
+            <div
+              class="float-right ml-4 md:ml-10 mb-4 w-32 h-32 md:w-56 md:h-56 relative group"
+            >
+              <div
+                class="absolute -inset-1 bg-gradient-to-tr from-emerald-200/40 to-sky-300/40 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-700"
+              >
+              </div>
+
+              <div
+                class="relative h-full w-full overflow-hidden rounded-xl border border-white/40 shadow-lg"
+              >
+                <Image
+                  src={labImg}
+                  alt="The Bass Studio Lab"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+            </div>
+
+            <ul
+              class="list-disc pl-5 space-y-4 text-base md:text-lg text-indigo-900/90"
+            >
+              <li>
+                <strong>The Journey Back:</strong> You can follow my progress on <strong
+                  >GitHub</strong
+                >
+                as I refresh my Python skills and explore the latest in AI-native
+                development.
+              </li>
+              <li>
+                <strong>The Wisdom Synthesis Engine:</strong> My current project is
+                a local-first tool designed to extract high-signal insights from long-form
+                YouTube and audio content. To respect data sovereignty and copyright,
+                this framework is built to be <strong
+                  >downloaded and executed locally</strong
+                > for personal research.
+              </li>
+              <li>
+                <strong>Signal over Noise:</strong> The engine automates transcription
+                and segmentation, generating structured <strong
+                  >PDF summaries</strong
+                > and high-fidelity <strong>audio snippets</strong>
+                to turn digital content into actionable somatic wisdom.
+              </li>
+              <li>
+                <strong>Sound Engineering:</strong> I continue to offer high-resolution
+                audio production for local artists, bringing an engineer's ear to
+                every frequency.
+              </li>
+            </ul>
+
+            <div class="clear-both"></div>
+          </div>
+        </section>
+
+        <section id="fatherhood" class="mt-12 md:mt-16">
+          <h2
+            class="inline-block text-2xl md:text-3xl font-semibold text-indigo-950/90 border-b border-pink-200 pb-1"
+          >
+            Parenting & Conscious Leadership
+          </h2>
+
+          <div
+            class="mt-8 relative text-base md:text-lg text-indigo-900/90 leading-relaxed"
+          >
+            <div
+              class="float-right ml-4 md:ml-10 mb-4 w-28 md:w-36 aspect-square relative group cursor-zoom-in"
+            >
+              <div
+                class="absolute -inset-1 bg-gradient-to-tr from-amber-200 to-pink-300 rounded-3xl blur opacity-20 group-hover:opacity-60 transition duration-700"
+              >
+              </div>
+
+              <label>
+                <input type="checkbox" class="peer hidden" id="zoom-check" />
+
+                <div
+                  class="relative h-full w-full overflow-hidden rounded-2xl border border-white/40 shadow-xl
+                    peer-checked:fixed peer-checked:inset-0 peer-checked:z-50 peer-checked:flex peer-checked:items-center peer-checked:justify-center
+                    transition-all duration-500 ease-in-out"
+                >
+                  <div
+                    class="hidden peer-checked:block fixed inset-0 bg-indigo-950/40 backdrop-blur-md cursor-zoom-out"
+                  >
+                  </div>
+
+                  <Image
+                    src={fatherhoodImg}
+                    alt="José and his son"
+                    class="zoom-target w-full h-full object-cover transition-all duration-500 peer-checked:relative"
+                  />
+                </div>
+              </label>
+
+              <p
+                class="text-[9px] text-center mt-2 text-indigo-900/40 uppercase tracking-[0.2em] group-hover:text-indigo-900/70 transition-colors"
+              >
+                Click to enlarge
+              </p>
+            </div>
+
+            <p>
+              Navigating a 50/50 co-parenting partnership while managing a
+              career pivot is my daily practice. I offer a unique perspective
+              for fathers who feel the weight of responsibility and want to lead
+              their families with presence rather than pressure.
+            </p>
+
+            <p class="mt-5">
+              Through this journey, I have learned to <strong
+                >self-regulate</strong
+              > my nervous system, remain embodied in challenging moments, and engage
+              from a genuinely <strong>vulnerable space</strong>. By recognizing
+              and healing the connection with my own <strong>inner child</strong
+              >, I have found a profound, heart-centered way to connect with my
+              son.
+            </p>
+
+            <div class="clear-both"></div>
+          </div>
+        </section>
+
+        <style>
+          /* The "Gallery-Scale" Fixed Zoom */
+          #zoom-check:checked ~ div .zoom-target {
+            /* Mobile: Kept at your perfect size */
+            width: 350px !important;
+            height: 350px !important;
+            border-radius: 2rem !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7) !important;
+          }
+
+          @media (min-width: 768px) {
+            #zoom-check:checked ~ div .zoom-target {
+              /* Desktop: Increased to 700px for a more powerful focal point */
+              width: 700px !important;
+              height: 700px !important;
+            }
+          }
+        </style>
+
+        <section id="contact" class="mt-12 md:mt-16">
+          <h2
+            class="inline-block text-2xl md:text-3xl font-semibold text-indigo-950/90 border-b border-pink-200 pb-1"
+          >
+            Work With Me
+          </h2>
+
+          <div class="mt-6 space-y-4 text-base md:text-lg text-indigo-900/90">
+            <p class="max-w-none">
+              I am available for limited 1:1 coaching, sound production, and
+              technical collaborations.
+            </p>
+            <p class="max-w-none">
+              Email:
+              <a
+                href="mailto:joysomatic@gmail.com"
+                class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm md:text-base font-semibold text-indigo-900/90 bg-violet-200/60 hover:bg-violet-200/90 hover:shadow-[0_10px_30px_rgba(196,181,253,0.7)] hover:-translate-y-[1px] transition-all duration-200 ease-out"
+              >
+                joysomatic@gmail.com
+              </a>
+            </p>
+            <p class="space-x-3">
+              <a
+                href="https://linkedin.com/in/joysomatic"
+                target="_blank"
+                class="inline-flex items-center justify-center rounded-full px-3 py-1.5 text-xs md:text-sm font-semibold text-indigo-900/85 bg-white/70 hover:bg-sky-50 hover:shadow-[0_10px_26px_rgba(59,130,246,0.55)] hover:-translate-y-[1px] transition-all duration-200 ease-out"
+              >
+                LinkedIn
+              </a>
+              <span>|</span>
+              <a
+                href="https://github.com/joysomatic"
+                target="_blank"
+                class="inline-flex items-center justify-center rounded-full px-3 py-1.5 text-xs md:text-sm font-semibold text-indigo-900/85 bg-white/70 hover:bg-indigo-50 hover:shadow-[0_10px_26px_rgba(129,140,248,0.55)] hover:-translate-y-[1px] transition-all duration-200 ease-out"
+              >
+                GitHub
+              </a>
+              <span>|</span>
+              <a
+                href="https://instagram.com/joysomatic"
+                target="_blank"
+                class="inline-flex items-center justify-center rounded-full px-3 py-1.5 text-xs md:text-sm font-semibold text-indigo-900/85 bg-white/70 hover:bg-pink-50 hover:shadow-[0_10px_26px_rgba(244,114,182,0.55)] hover:-translate-y-[1px] transition-all duration-200 ease-out"
+              >
+                Instagram
+              </a>
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="mt-16 border-t border-violet-100/80 text-center text-xs md:text-sm text-indigo-900/70 py-6 px-4"
+      >
+        <p>
+          © 2026 JoySomatic – José Oñate Yáñez | Built with Code &amp; Heart
+        </p>
+      </footer>
+    </div>
+  </div></BaseLayout
+>
