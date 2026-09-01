@@ -6,5 +6,4 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: 'cloudflare',
   }),
-  // Ensure experimental.session is NOT enabled in your astro config
 });
