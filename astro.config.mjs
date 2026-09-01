@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
-import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   output: 'server',
@@ -8,7 +7,6 @@ export default defineConfig({
     imageService: 'cloudflare',
   }),
   vite: {
-    plugins: [tailwindcss()],
     build: {
       cssMinify: 'esbuild',
     },
