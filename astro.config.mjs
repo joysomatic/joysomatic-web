@@ -1,12 +1,14 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   output: 'server',
   adapter: cloudflare({
-    imageService: 'cloudflare',
+    imageService: 'passthrough',
   }),
   vite: {
+    plugins: [tailwindcss()],
     build: {
       cssMinify: 'esbuild',
     },
