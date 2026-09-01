@@ -3,16 +3,10 @@ import tailwindcss from "@tailwindcss/vite";
 import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
-  output: "static",
+  output: "server", // or "hybrid"
+  adapter: cloudflare(),
 
   vite: {
     plugins: [tailwindcss()],
-    optimizeDeps: {
-      noDiscovery: false,
-    },
   },
-
-  adapter: cloudflare({
-    imageService: "passthrough",
-  }),
 });
