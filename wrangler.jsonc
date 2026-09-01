@@ -1,5 +1,10 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "joysomatic",
-  "compatibility_date": "2026-09-01"
+  "name": "joysomatic-site",
+  "main": "./dist/server/entry.mjs",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS"
+  }
 }
