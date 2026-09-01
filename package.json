@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "astro check && astro build && node clean-wrangler.js"
+    "dev": "wrangler pages dev ./dist",
+    "deploy": "wrangler pages deploy ./dist"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
