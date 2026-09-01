@@ -6,8 +6,8 @@ const filePath = path.resolve('dist/server/wrangler.json');
 if (fs.existsSync(filePath)) {
   const config = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-  // 1. Point pages build output to the static assets subdirectory
-  config.pages_build_output_dir = 'dist/client';
+  // 1. Resolve dist/client relative to dist/server/wrangler.json
+  config.pages_build_output_dir = '../client';
 
   // 2. Remove keys unsupported by Cloudflare Pages
   delete config.main;
