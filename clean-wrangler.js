@@ -6,12 +6,37 @@ const filePath = path.resolve('dist/server/wrangler.json');
 if (fs.existsSync(filePath)) {
   const config = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-  // 1. Remove keys unsupported by Cloudflare Pages
+  // 1. Point pages build output to the static assets subdirectory
+  config.pages_build_output_dir = 'dist/client';
+
+  // 2. Remove keys unsupported by Cloudflare Pages
   delete config.main;
   delete config.rules;
   delete config.assets;
 
-  // 2. Remove SESSION KV namespace if missing an ID
+  // 3. Remove unsupported top-level & dev fields warned by Wrangler
+  delete config.definedEnvironments;
+  delete config.exports;
+  delete config.connect;
+  delete config.ai_search_namespaces;
+  delete config.ai_search;
+  delete config.agent_memory;
+  delete config.secrets_store_secrets;
+  delete config.artifacts;
+  delete config.unsafe_hello_world;
+  delete config.flagship;
+  delete config.worker_loaders;
+  delete config.ratelimits;
+  delete config.vpc_services;
+  delete config.vpc_networks;
+  delete config.python_modules;
+
+  if (config.dev) {
+    delete config.dev.enable_containers;
+    delete config.dev.generate_types;
+  }
+
+  // 4. Remove unconfigured SESSION KV namespaces
   if (Array.isArray(config.kv_namespaces)) {
     config.kv_namespaces = config.kv_namespaces.filter(
       (kv) => !(kv.binding === 'SESSION' && !kv.id)
@@ -21,7 +46,6 @@ if (fs.existsSync(filePath)) {
     }
   }
 
-  // 3. Remove preview SESSION KV namespace if missing an ID
   if (Array.isArray(config.previews?.kv_namespaces)) {
     config.previews.kv_namespaces = config.previews.kv_namespaces.filter(
       (kv) => !(kv.binding === 'SESSION' && !kv.id)
@@ -31,7 +55,6 @@ if (fs.existsSync(filePath)) {
     }
   }
 
-  // 4. Remove empty previews object if left over
   if (config.previews && Object.keys(config.previews).length === 0) {
     delete config.previews;
   }
