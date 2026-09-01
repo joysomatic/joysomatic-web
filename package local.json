@@ -5,9 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro check && astro build",
-    "postbuild": "rm -f dist/server/wrangler.json",
     "preview": "astro preview"
   },
   "devDependencies": {
