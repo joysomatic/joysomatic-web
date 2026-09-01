@@ -1,0 +1,14 @@
+src/
+├── components/
+│   ├── navbar.astro          <-- Global navbar with dynamic route & language switcher
+│   └── ContactForm.astro     <-- Shared contact form with customized subject hidden inputs
+└── pages/
+    ├── index.astro           <-- English Home / Main portal
+    ├── somatic.astro         <-- English Somatic Coaching (Algorithm: Sensation -> Story -> Choice)
+    ├── tech.astro            <-- English Tech Coaching & Automations
+    ├── audio.astro           <-- English Audio & Music Production Coaching
+    └── es/
+        ├── index.astro       <-- Spanish Home
+        ├── somatic.astro     <-- Spanish Somatic Coaching
+        ├── tech.astro        <-- Spanish Tech Coaching
+        └── audio.astro       <-- Spanish Audio Coaching

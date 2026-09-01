@@ -1,0 +1,101 @@
+---
+/* src/pages/somatic.astro */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/navbar.astro";
+import ContactForm from "../components/ContactForm.astro";
+---
+
+<BaseLayout title="Data-Driven Somatic Coaching | JoySomatic">
+  <Navbar />
+  <div class="pt-20 md:pt-24 px-6">
+    <div class="mx-auto max-w-4xl">
+      <header class="relative text-left py-12 md:py-16">
+        <div class="absolute inset-0 bg-white/65 backdrop-blur-2xl border-b border-violet-100/50"></div>
+        <div class="relative max-w-4xl mx-auto px-6">
+          <p class="text-[0.7rem] uppercase tracking-[0.35em] text-indigo-700/90 mb-3">
+            An Engineer's Framework for the Nervous System
+          </p>
+          <h1 class="text-[2.2rem] md:text-[2.8rem] leading-tight font-semibold text-indigo-950/90">
+            Somatic & Relational Coaching
+          </h1>
+          <p class="mt-3 text-base md:text-lg text-indigo-900/85">
+            Helping highly intellectual individuals process anxiety, stress, and loop states into grounded choice and emotional freedom.
+          </p>
+        </div>
+      </header>
+
+      <main class="py-12 space-y-12">
+        <section class="space-y-4 text-indigo-900/90 text-base md:text-lg">
+          <h2 class="text-2xl font-semibold text-indigo-950/90">Grounded Somatics for Analytical Minds</h2>
+          <p>
+            As an engineer and highly sensitive individual, I spent years analyzing emotions logically. True regulation happens when we stop trying to solve body states with overthinking and learn the underlying language of our nervous system.
+          </p>
+        </section>
+
+        <!-- The Core Framework: Algorithm -->
+        <section class="space-y-6">
+          <h2 class="text-2xl font-semibold text-indigo-950/90 border-b border-pink-200 pb-2">
+            The Core Algorithm: Sensation → Story → Choice
+          </h2>
+
+          <div class="space-y-4">
+            <div class="rounded-[2.25rem] bg-white/90 p-6 shadow-md border border-pink-100">
+              <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">Step 01</span>
+              <h3 class="text-lg font-semibold text-indigo-950/90 mt-1">Sensation (Raw Body Signal)</h3>
+              <p class="mt-2 text-sm md:text-base text-indigo-900/85 leading-relaxed">
+                Before thoughts kick in, the nervous system registers raw physical data—tightness, heart rate, temperature, or contraction. We build self-vulnerability to simply sit with these sensations without immediate judgment or panic.
+              </p>
+            </div>
+
+            <div class="rounded-[2.25rem] bg-white/90 p-6 shadow-md border border-pink-100">
+              <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">Step 02</span>
+              <h3 class="text-lg font-semibold text-indigo-950/90 mt-1">Story (Mental Interpretation)</h3>
+              <p class="mt-2 text-sm md:text-base text-indigo-900/85 leading-relaxed">
+                When physical sensation arises, the intellect rapidly invents stories ("I am failing", "Something terrible is happening"). We map out these looping narratives to see them as temporary programs rather than absolute truth.
+              </p>
+            </div>
+
+            <div class="rounded-[2.25rem] bg-white/90 p-6 shadow-md border border-pink-100">
+              <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">Step 03</span>
+              <h3 class="text-lg font-semibold text-indigo-950/90 mt-1">Choice (Grounded Action)</h3>
+              <p class="mt-2 text-sm md:text-base text-indigo-900/85 leading-relaxed">
+                Once the loop is recognized and the sensation is felt, you regain decision-making agency. You break the pattern and channel energy back into what you truly want to create in life and relationships.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Session Formats -->
+        <section class="space-y-6">
+          <h2 class="text-2xl font-semibold text-indigo-950/90 border-b border-pink-200 pb-2">
+            Session Formats
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="rounded-[2rem] bg-white/90 p-6 shadow-md border border-pink-100">
+              <h3 class="text-lg font-semibold text-indigo-950/90 mb-2">In-Person Sessions</h3>
+              <p class="text-sm text-indigo-900/80 leading-relaxed">
+                Held in quiet natural surroundings or supportive private spaces, removing clinical pressure so your nervous system can unfold naturally.
+              </p>
+            </div>
+
+            <div class="rounded-[2rem] bg-white/90 p-6 shadow-md border border-pink-100">
+              <h3 class="text-lg font-semibold text-indigo-950/90 mb-2">Virtual & Asynchronous Coaching</h3>
+              <p class="text-sm text-indigo-900/80 leading-relaxed">
+                Flexible online calls or voice-note coaching designed for thoughtful, deep reflection between daily routines.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact-form" class="pt-6">
+          <ContactForm subject="Inquiry: Somatic Coaching" categoryTitle="Somatic Coaching" />
+        </section>
+      </main>
+
+      <footer class="mt-16 border-t border-violet-100/80 text-center text-xs md:text-sm text-indigo-900/70 py-6 px-4">
+        <p>© 2026 JoySomatic – José Oñate Yáñez | Built with Code & Heart</p>
+      </footer>
+    </div>
+  </div>
+</BaseLayout>

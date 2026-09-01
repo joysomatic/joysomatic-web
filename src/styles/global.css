@@ -1,9 +1,19 @@
 @import "tailwindcss";
 
+/* 1. Scale default Tailwind font sizes up for better legibility */
+@theme {
+  --text-xs: 0.95rem;  /* Default was ~12px, now ~15px */
+  --text-sm: 1.1rem;   /* Default was ~14px, now ~17.5px */
+  --text-base: 1.25rem; /* Default was ~16px, now ~20px */
+}
+
+/* 2. Set base rules for body text */
 body {
   margin: 0;
   font-family: "Quicksand", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
+  font-size: var(--text-base); /* Sets overall site text to 1.25rem (~20px) */
+  font-weight: 500; /* Makes thin font strokes slightly bolder and easier to read */
   background: linear-gradient(135deg, #fdf6ff, #ecfeff, #ffe4f5);
   color: #1e1b4b;
   line-height: 1.7;

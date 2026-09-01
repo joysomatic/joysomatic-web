@@ -1,0 +1,81 @@
+---
+/* src/pages/tech.astro */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/navbar.astro";
+import ContactForm from "../components/ContactForm.astro";
+---
+
+<BaseLayout title="Tech Coaching & Solutions | JoySomatic">
+  <Navbar />
+  <div class="pt-20 md:pt-24 px-6">
+    <div class="mx-auto max-w-4xl">
+      <header class="relative text-left py-12 md:py-16">
+        <div class="absolute inset-0 bg-white/65 backdrop-blur-2xl border-b border-violet-100/50"></div>
+        <div class="relative max-w-4xl mx-auto px-6">
+          <p class="text-[0.7rem] uppercase tracking-[0.35em] text-indigo-700/90 mb-3">
+            Patience-First Technical Mentorship
+          </p>
+          <h1 class="text-[2.2rem] md:text-[2.8rem] leading-tight font-semibold text-indigo-950/90">
+            Technology & Automation Coaching
+          </h1>
+          <p class="mt-3 text-base md:text-lg text-indigo-900/85">
+            Empowering individuals and teams to master everyday devices, modern AI tools, and custom workflow automations.
+          </p>
+        </div>
+      </header>
+
+      <main class="py-12 space-y-12">
+        <section class="space-y-4 text-indigo-900/90 text-base md:text-lg">
+          <h2 class="text-2xl font-semibold text-indigo-950/90">Your Computer Science Ally</h2>
+          <p>
+            Holding a Bachelor’s Degree in Computer Science and having developed software since 2015, I know that technology can often feel overwhelming. So many people struggle with basic device features or get intimidated by software. I’m here to bridge that gap with clarity, patience, and zero jargon.
+          </p>
+        </section>
+
+        <section class="space-y-6">
+          <h2 class="text-2xl font-semibold text-indigo-950/90 border-b border-pink-200 pb-2">
+            How I Can Help You
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="rounded-[2rem] bg-white/90 p-6 shadow-md border border-indigo-100">
+              <h3 class="text-lg font-semibold text-indigo-950/90 mb-2">Everyday Device Mastery</h3>
+              <p class="text-sm text-indigo-900/80 leading-relaxed">
+                Learn how to truly use your iPhone, Android, or computer. Clean up digital clutter, organize folders, configure cloud backups, set up parental controls, and make your devices work for you—not against you.
+              </p>
+            </div>
+
+            <div class="rounded-[2rem] bg-white/90 p-6 shadow-md border border-indigo-100">
+              <h3 class="text-lg font-semibold text-indigo-950/90 mb-2">AI-Assisted Development</h3>
+              <p class="text-sm text-indigo-900/80 leading-relaxed">
+                Navigate the modern AI landscape. Learn how to prompt effectively, integrate AI assistants into your daily workflow, and use AI tools to draft code or solve problems faster.
+              </p>
+            </div>
+
+            <div class="rounded-[2rem] bg-white/90 p-6 shadow-md border border-indigo-100">
+              <h3 class="text-lg font-semibold text-indigo-950/90 mb-2">Google Workspace & Scripting</h3>
+              <p class="text-sm text-indigo-900/80 leading-relaxed">
+                Custom Google Apps Script solutions, automated spreadsheets, email notifications, and streamlined business operations built specifically for your small project or workflow.
+              </p>
+            </div>
+
+            <div class="rounded-[2rem] bg-white/90 p-6 shadow-md border border-indigo-100">
+              <h3 class="text-lg font-semibold text-indigo-950/90 mb-2">Patient 1:1 Tech Coaching</h3>
+              <p class="text-sm text-indigo-900/80 leading-relaxed">
+                Direct step-by-step sessions tailored to your exact pace. No question is too basic. Build lasting digital confidence in a safe, supportive environment.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact-form" class="pt-6">
+          <ContactForm subject="Inquiry: Tech Coaching & Solutions" categoryTitle="Technology Solutions & Coaching" />
+        </section>
+      </main>
+
+      <footer class="mt-16 border-t border-violet-100/80 text-center text-xs md:text-sm text-indigo-900/70 py-6 px-4">
+        <p>© 2026 JoySomatic – José Oñate Yáñez | Built with Code & Heart</p>
+      </footer>
+    </div>
+  </div>
+</BaseLayout>

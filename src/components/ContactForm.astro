@@ -1,0 +1,154 @@
+---
+/* src/components/ContactForm.astro */
+interface Props {
+  subject?: string;
+  categoryTitle?: string;
+  isSpanish?: boolean;
+}
+
+const { 
+  subject = "Website Inquiry", 
+  categoryTitle, 
+  isSpanish = false 
+} = Astro.props;
+
+// Dictionary for bilingual UI strings
+const labels = {
+  category: isSpanish ? "Categoría de consulta" : "Inquiry Category",
+  name: isSpanish ? "Nombre" : "Name",
+  email: isSpanish ? "Correo electrónico" : "Email",
+  message: isSpanish ? "Mensaje" : "Message",
+  button: isSpanish ? "Enviar mensaje" : "Send Message",
+  sending: isSpanish ? "Enviando..." : "Sending...",
+  success: isSpanish ? "¡Gracias! Tu mensaje ha sido enviado con éxito." : "Thank you! Your message has been sent successfully.",
+  error: isSpanish ? "¡Opps! Algo salió mal. Por favor intenta de nuevo." : "Oops! Something went wrong. Please try again.",
+  networkError: isSpanish ? "Error de red. Por favor intenta más tarde." : "Network error. Please try again later.",
+  placeholders: {
+    name: isSpanish ? "Tu nombre" : "Your name",
+    email: isSpanish ? "tu@correo.com" : "you@example.com",
+    message: isSpanish ? "¿En qué puedo ayudarte?" : "How can I help you?",
+  }
+};
+---
+
+<div class="rounded-[2.25rem] bg-white/90 p-8 shadow-md border border-pink-100 max-w-2xl mx-auto">
+  {categoryTitle && (
+    <div class="mb-6 pb-4 border-b border-pink-100">
+      <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">{labels.category}</span>
+      <h3 class="text-xl font-semibold text-indigo-950 mt-1">{categoryTitle}</h3>
+    </div>
+  )}
+
+  <form class="joysomatic-contact-form space-y-5">
+    <input type="hidden" name="subject" value={subject} />
+
+    <div>
+      <label class="block text-base font-semibold text-indigo-950 mb-1">
+        {labels.name}
+      </label>
+      <input
+        type="text"
+        name="name"
+        required
+        placeholder={labels.placeholders.name}
+        class="w-full rounded-2xl border border-pink-200/80 p-3.5 text-indigo-950 bg-white/90 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent transition text-base disabled:opacity-50"
+      />
+    </div>
+
+    <div>
+      <label class="block text-base font-semibold text-indigo-950 mb-1">
+        {labels.email}
+      </label>
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder={labels.placeholders.email}
+        class="w-full rounded-2xl border border-pink-200/80 p-3.5 text-indigo-950 bg-white/90 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent transition text-base disabled:opacity-50"
+      />
+    </div>
+
+    <div>
+      <label class="block text-base font-semibold text-indigo-950 mb-1">
+        {labels.message}
+      </label>
+      <textarea
+        name="message"
+        rows="4"
+        required
+        placeholder={labels.placeholders.message}
+        class="w-full rounded-2xl border border-pink-200/80 p-3.5 text-indigo-950 bg-white/90 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent transition text-base disabled:opacity-50"
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="submit-btn w-full rounded-2xl bg-indigo-950 text-white font-semibold text-lg py-4 px-6 hover:bg-indigo-900 active:scale-[0.99] transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      {labels.button}
+    </button>
+    
+    <p 
+      class="form-status text-base font-medium hidden mt-3 text-center"
+      data-sending={labels.sending}
+      data-success={labels.success}
+      data-error={labels.error}
+      data-network={labels.networkError}
+    ></p>
+  </form>
+</div>
+
+<script>
+  // Global event delegation prevents missing-element errors and ID collisions across pages
+  document.addEventListener("submit", async (e) => {
+    const form = e.target as HTMLFormElement;
+    if (!form || !form.classList.contains("joysomatic-contact-form")) return;
+
+    e.preventDefault();
+    const status = form.querySelector(".form-status") as HTMLElement | null;
+    const submitBtn = form.querySelector(".submit-btn") as HTMLButtonElement | null;
+
+    if (!status) return;
+
+    const msgSending = status.dataset.sending || "Sending...";
+    const msgSuccess = status.dataset.success || "Message sent!";
+    const msgError = status.dataset.error || "An error occurred.";
+    const msgNetwork = status.dataset.network || "Network error.";
+
+    // Capture form values FIRST before disabling input fields
+    const formData = new FormData(form);
+    const jsonPayload = Object.fromEntries(formData.entries());
+
+    status.textContent = msgSending;
+    status.className = "form-status text-base font-medium text-indigo-700 block mt-3 text-center animate-pulse";
+    
+    if (submitBtn) submitBtn.disabled = true;
+    const inputs = form.querySelectorAll("input, textarea, button");
+    inputs.forEach((el) => ((el as HTMLInputElement).disabled = true));
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(jsonPayload),
+      });
+
+      if (response.ok) {
+        status.textContent = msgSuccess;
+        status.className = "form-status text-base font-semibold text-emerald-600 block mt-3 text-center";
+        form.reset();
+      } else {
+        status.textContent = msgError;
+        status.className = "form-status text-base font-semibold text-rose-600 block mt-3 text-center";
+      }
+    } catch (err) {
+      status.textContent = msgNetwork;
+      status.className = "form-status text-base font-semibold text-rose-600 block mt-3 text-center";
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+      inputs.forEach((el) => ((el as HTMLInputElement).disabled = false));
+    }
+  });
+</script>

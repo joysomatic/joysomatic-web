@@ -1,16 +1,31 @@
 ---
 /* src/components/navbar.astro */
 const { url } = Astro;
-const isSpanish = url.pathname.startsWith('/es');
-const langTarget = isSpanish ? "/" : "/es/";
+const currentPath = url.pathname;
+const isSpanish = currentPath.startsWith('/es');
+
+// Helper to calculate target language URL dynamically
+function getLangTarget(path: string, isEs: boolean) {
+  if (isEs) {
+    const cleanPath = path.replace(/^\/es(\/|$)/, '/');
+    return cleanPath || '/';
+  } else {
+    return path === '/' ? '/es/' : `/es${path}`;
+  }
+}
+
+const langTarget = getLangTarget(currentPath, isSpanish);
 const langLabel = isSpanish ? "English" : "Español";
+
+// Path prefix for internal navigation links
+const pathPrefix = isSpanish ? "/es" : "";
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-violet-200/70 backdrop-blur-xl border-b border-violet-100/80">
   <div class="max-w-4xl mx-auto flex items-center justify-between px-6 py-3">
     
     <div class="flex items-center gap-4">
-      <a href={isSpanish ? "/es/#top" : "#top"} class="text-xl font-bold text-indigo-950/90">
+      <a href={`${pathPrefix}/`} class="text-xl font-bold text-indigo-950/90">
         JoySomatic
       </a>
 
@@ -37,20 +52,17 @@ const langLabel = isSpanish ? "English" : "Español";
       class="absolute top-full left-0 w-full overflow-hidden max-h-0 transition-all duration-500 ease-in-out bg-violet-100/95 backdrop-blur-2xl md:static md:max-h-none md:w-auto md:bg-transparent md:backdrop-blur-none"
     >
       <div class="flex flex-col md:flex-row items-center gap-x-1 gap-y-4 px-6 py-8 md:py-0">
-        <a href={isSpanish ? "/es/#top" : "#top"} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-indigo-50 transition-all">
+        <a href={`${pathPrefix}/`} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-indigo-50 transition-all">
           {isSpanish ? "Inicio" : "Home"}
         </a>
-        <a href={isSpanish ? "/es/#about" : "#about"} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-indigo-50 transition-all">
-          {isSpanish ? "Sobre mí" : "About"}
+        <a href={`${pathPrefix}/somatic`} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-pink-50 transition-all">
+          {isSpanish ? "Somática" : "Somatic"}
         </a>
-        <a href={isSpanish ? "/es/#relationships" : "#relationships"} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-pink-50 transition-all">
-          {isSpanish ? "Coaching" : "Coaching"}
+        <a href={`${pathPrefix}/tech`} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-indigo-50 transition-all">
+          {isSpanish ? "Tecnología" : "Tech"}
         </a>
-        <a href={isSpanish ? "/es/#lab" : "#lab"} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-emerald-50 transition-all">
-          Lab
-        </a>
-        <a href={isSpanish ? "/es/#contact" : "#contact"} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-violet-50 transition-all">
-          {isSpanish ? "Contacto" : "Connect"}
+        <a href={`${pathPrefix}/audio`} class="nav-link px-3.5 py-1.5 rounded-full text-sm font-semibold text-indigo-900/85 hover:bg-emerald-50 transition-all">
+          {isSpanish ? "Audio" : "Audio"}
         </a>
       </div>
     </div>

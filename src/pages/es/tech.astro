@@ -1,0 +1,81 @@
+---
+/* src/pages/es/tech.astro */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/navbar.astro";
+import ContactForm from "../../components/ContactForm.astro";
+---
+
+<BaseLayout title="Coaching Tecnológico y Soluciones | JoySomatic">
+  <Navbar />
+  <div class="pt-20 md:pt-24 px-6">
+    <div class="mx-auto max-w-4xl">
+      <header class="relative text-left py-12 md:py-16">
+        <div class="absolute inset-0 bg-white/65 backdrop-blur-2xl border-b border-violet-100/50"></div>
+        <div class="relative max-w-4xl mx-auto px-6">
+          <p class="text-[0.7rem] uppercase tracking-[0.35em] text-indigo-700/90 mb-3">
+            Mentoría Técnica Guiada con Paciencia
+          </p>
+          <h1 class="text-[2.2rem] md:text-[2.8rem] leading-tight font-semibold text-indigo-950/90">
+            Coaching de Tecnología y Automatización
+          </h1>
+          <p class="mt-3 text-base md:text-lg text-indigo-900/85">
+            Empoderando a personas y equipos para dominar dispositivos cotidianos, herramientas de IA y automatizaciones personalizadas.
+          </p>
+        </div>
+      </header>
+
+      <main class="py-12 space-y-12">
+        <section class="space-y-4 text-indigo-900/90 text-base md:text-lg">
+          <h2 class="text-2xl font-semibold text-indigo-950/90">Tu Aliado en Informática</h2>
+          <p>
+            Con una Licenciatura en Ciencias de la Computación y desarrollando software desde 2015, sé que la tecnología a menudo genera frustración. Muchas personas no aprovechan sus dispositivos o se sienten intimidadas. Estoy aquí para cerrar esa brecha con claridad, paciencia y sin tecnicismos innecesarios.
+          </p>
+        </section>
+
+        <section class="space-y-6">
+          <h2 class="text-2xl font-semibold text-indigo-950/90 border-b border-pink-200 pb-2">
+            ¿Cómo te puedo ayudar?
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="rounded-[2rem] bg-white/90 p-6 shadow-md border border-indigo-100">
+              <h3 class="text-lg font-semibold text-indigo-950/90 mb-2">Dominio de Dispositivos Cotidianos</h3>
+              <p class="text-sm text-indigo-900/80 leading-relaxed">
+                Aprende a usar tu iPhone, Android o computadora sin complicaciones. Organiza archivos, configura respaldos en la nube, establece controles parentales y haz que tus equipos trabajen para ti.
+              </p>
+            </div>
+
+            <div class="rounded-[2rem] bg-white/90 p-6 shadow-md border border-indigo-100">
+              <h3 class="text-lg font-semibold text-indigo-950/90 mb-2">Desarrollo Asistido por IA</h3>
+              <p class="text-sm text-indigo-900/80 leading-relaxed">
+                Navega el mundo de la inteligencia artificial. Aprende a redactar mejores prompts, integrar asistentes de IA en tu rutina diaria y acelerar proyectos o creación de contenido.
+              </p>
+            </div>
+
+            <div class="rounded-[2rem] bg-white/90 p-6 shadow-md border border-indigo-100">
+              <h3 class="text-lg font-semibold text-indigo-950/90 mb-2">Google Workspace y Scripting</h3>
+              <p class="text-sm text-indigo-900/80 leading-relaxed">
+                Soluciones a medida con Google Apps Script, hojas de cálculo automatizadas, respuestas automáticas e integración de procesos para optimizar tus proyectos.
+              </p>
+            </div>
+
+            <div class="rounded-[2rem] bg-white/90 p-6 shadow-md border border-indigo-100">
+              <h3 class="text-lg font-semibold text-indigo-950/90 mb-2">Coaching 1:1 Paciente y Guiado</h3>
+              <p class="text-sm text-indigo-900/80 leading-relaxed">
+                Sesiones paso a paso adaptadas a tu propio ritmo. Ninguna pregunta es demasiado básica. Desarrolla confianza digital en un entorno seguro y comprensivo.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact-form" class="pt-6">
+          <ContactForm subject="Consulta: Coaching Tecnológico" categoryTitle="Soluciones Tecnológicas y Coaching" isSpanish={true} />
+        </section>
+      </main>
+
+      <footer class="mt-16 border-t border-violet-100/80 text-center text-xs md:text-sm text-indigo-900/70 py-6 px-4">
+        <p>© 2026 JoySomatic – José Oñate Yáñez | Creado con Código y Corazón</p>
+      </footer>
+    </div>
+  </div>
+</BaseLayout>
