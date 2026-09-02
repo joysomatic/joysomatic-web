@@ -1,4 +1,29 @@
+/* src/styles/global.css */
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/quicksand-v37-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/quicksand-v37-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/comfortaa-v47-latin-700.woff2") format("woff2");
+}
 
 /* 1. Scale default Tailwind font sizes up for better legibility */
 @theme {
