@@ -1,4 +1,5 @@
 ---
+/* src/layouts/BaseLayout.astro */
 import SEO from "../components/SEO.astro";
 import "../styles/global.css";
 
@@ -17,7 +18,13 @@ const {
 
 <!doctype html>
 <html lang="en">
-  <SEO title={title} description={description} image={image} />
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    <SEO title={title} description={description} image={image} />
+  </head>
   <body
     class="bg-[#fdf6ff] text-[#1e1b4b] leading-relaxed antialiased relative overflow-x-hidden"
   >
