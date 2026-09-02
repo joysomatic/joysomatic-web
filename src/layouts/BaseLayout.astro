@@ -1,28 +1,23 @@
 ---
-interface Props {
-  title?: string;
-}
-
+import SEO from "../components/SEO.astro";
 import "../styles/global.css";
 
-const { title = "JoySomatic | Systems of the Heart, Sound & Code" } =
-  Astro.props;
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const { 
+  title = "JoySomatic | Systems of the Heart, Sound & Code",
+  description = "Decoding the language of the Body, Relationships, and Systems through somatics, sound, and engineering.",
+  image 
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Comfortaa:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <SEO title={title} description={description} image={image} />
   <body
     class="bg-[#fdf6ff] text-[#1e1b4b] leading-relaxed antialiased relative overflow-x-hidden"
   >
