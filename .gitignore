@@ -1,12 +1,23 @@
+# Operating System Files
 .DS_Store
 **/.DS_Store
+Thumbs.db
+
+# Dependencies
 node_modules/
+
+# Build & Output Directories
 dist/
 .astro/
-.cursor/
+.wrangler/
+
+# Environment & Local Secrets
 .env
 .env.*
+!.env.example
 .dev.vars
-.wrangler
-dist
-.astro
+
+# Editor & Tooling Configs
+.cursor/
+.vscode/
+.idea/
