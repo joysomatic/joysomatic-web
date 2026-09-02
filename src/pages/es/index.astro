@@ -45,7 +45,9 @@ const profileImageMetaData = profileImg as unknown as ImageMetadata;
                 <OptimizedImage 
                   src={profileImageMetaData} 
                   alt="José Oñate" 
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  loading="eager"
+                  fetchpriority="high"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </div>

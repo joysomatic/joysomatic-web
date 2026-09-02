@@ -1,11 +1,14 @@
 ---
+/* src/components/OptimizedImage.astro */
 import { Image } from "astro:assets";
-const { src, alt, class: className } = Astro.props;
+const { src, alt, class: className, loading = "lazy", fetchpriority } = Astro.props;
 ---
 <Image 
   src={src} 
   alt={alt} 
   widths={[320, 640, 1080]} 
   sizes="(max-width: 768px) 100vw, 320px"
+  loading={loading}
+  fetchpriority={fetchpriority}
   class={className} 
 />
