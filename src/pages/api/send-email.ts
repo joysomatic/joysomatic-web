@@ -89,7 +89,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Prepare Resend payload
     const resendPayload: Record<string, any> = {
-      from: 'JoySomatic Contact <jose@joysomatic.com>',
+      from: 'JoySomatic Contact <contact@joysomatic.com>',
       to: [recipientEmail],
       subject: rawSubject,
       html: htmlPayload,
